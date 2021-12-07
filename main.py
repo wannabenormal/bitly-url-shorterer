@@ -3,7 +3,6 @@ import argparse
 import requests
 from urllib.parse import urlparse
 from dotenv import load_dotenv
-load_dotenv()
 
 
 def shorten_link(token, url):
@@ -55,6 +54,7 @@ def is_bitlink(token, link):
 
 
 def main():
+    load_dotenv()
     bitly_token = os.getenv("BITLY_TOKEN")
 
     parser = argparse.ArgumentParser(description="Создание и подсчет кликов bit.ly")
